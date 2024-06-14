@@ -1,0 +1,36 @@
+{% include ('cabecera.html') %}
+
+<!--LISTA DE USUARIOS-->
+
+{% if usuarios %}
+<table class="table">
+    <h1>Lista de usuarios</h1>
+    <thead>
+        <tr>
+            <th scope="col">N°</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Contraseña</th>
+            <th scope="col">ROL</th>
+            <th scope="col">CURP</th>
+            <th scope="col">Sección</th>
+            <th scope="col">Locación</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for mostrar in usuarios %}
+        <tr>
+            <th scope="row">{{mostrar.id}}</th>
+            <td>{{mostrar.correo}}</td>
+            <td>{{mostrar.password}}</td>
+            <td>{{mostrar.id_rol}}</td>
+            <td>{{mostrar.curp}}</td>
+            <td>{{mostrar.seccion}}</td>
+            <td>{{mostrar.location}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    {% else %}
+    <p>No hay datos</p>
+    {% endif %}
+    <a href="/adminPrincipal">Volver</a>
+</table>

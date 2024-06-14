@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Funcionario de Casilla</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        #frame_principal {
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .titulo {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .label {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .boton {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+        .boton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="frame_principal">
+        <div class="titulo">Panel del Funcionario de Casilla</div>
+        <div class="label">Nombre del Funcionario: Juan Pérez</div>
+        <div>
+            <button class="boton" onclick="generarGraficoTotal()">Mostrar Conteo Total</button>
+            <button class="boton" onclick="generarGraficoPartido()">Mostrar Conteo por Partido</button>
+            <button class="boton" onclick="generarActaPDF()">Generar Acta PDF</button>
+        </div>
+    </div>
+
+    <script>
+        // Datos de ejemplo para votos
+        const votosTotales = 1000;
+        const votosPorPartido = {
+            'Morena': 400,
+            'Movimiento Ciudadano': 300,
+            'PRI': 300
+        };
+
+        // Función para generar el gráfico del conteo total
+        function generarGraficoTotal() {
+            window.alert("Función para generar el gráfico del conteo total.");
+            // Aquí va el código para generar el gráfico del conteo total
+        }
+
+        // Función para generar el gráfico del conteo por partido
+        function generarGraficoPartido() {
+            window.alert("Función para generar el gráfico del conteo por partido.");
+            // Aquí va el código para generar el gráfico del conteo por partido
+        }
+
+        // Función para generar el acta en PDF
+        function generarActaPDF() {
+            window.alert("Función para generar el acta en PDF.");
+            // Aquí va el código para generar el acta en PDF
+        }
+    </script>
+    <a href="/">Salir</a>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% include ('cabecera.html') %}
+
+
+<div class="caja">
+    <form class="form-control" action="crear-registro" method="post">
+        <h1 class="text-center t">Registro</h1>
+        <div class="alert alert-danger" role="alert">
+            {% if mensaje %}
+            {{ mensaje }}
+            {% endif %}
+        </div>
+        
+        <div class="form-group">
+            <label for="exampleInputEmail1">CURP</label>
+            <input type="text" class="form-control" id="exampleInputCurp1" aria-describedby="curp" placeholder="CURP" name="txtCURP">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="txtCorreo">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" name="txtPassword">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Sección</label>
+            <input type="text" class="form-control" id="exampleInputLocacion1" placeholder="Sección" name="txtSeccion">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Locación</label>
+            <input type="text" class="form-control" id="exampleInputLocacion1" placeholder="Locación" name="txtLocation">
+        </div>
+        <input type="hidden" id="txtRol" name="txtRol" value="{{ rol }}">
+
+        <div class="form-check">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+</div>

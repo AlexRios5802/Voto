@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emisión de Voto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #frame {
+            padding: 20px;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    
+    {% include ('cabecera.html') %}
+
+    <div id="frame">
+        <label for="identificacion">Identificación:</label>
+        <input type="text" id="identificacion"><br>
+        <button onclick="emitir_voto()">Emitir Voto</button><br>
+        <p id="estado"></p>
+    </div>
+
+    <script>
+        // Base de datos ficticia para simular los registros de votantes que ya emitieron su voto
+        let baseDeDatosVotantes = {
+            'Juan': {'ya_voto': false},
+            'María': {'ya_voto': true},
+            'Pedro': {'ya_voto': false}
+        };
+
+        // Función para verificar si el votante ya emitió su voto
+        function verificarVoto(identificacion) {
+            if (baseDeDatosVotantes.hasOwnProperty(identificacion)) {
+                if (!baseDeDatosVotantes[identificacion]['ya_voto']) {
+                    baseDeDatosVotantes[identificacion]['ya_voto'] = true;
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+
+        // Función para manejar el evento de emisión del voto
+        function emitirVoto() {
+            let identificacion = document.getElementById('identificacion').value;
+            let estado = document.getElementById('estado');
+            if (identificacion.trim() === '') {
+                estado.textContent = "Por favor, ingrese su identificación.";
+            } else if (verificarVoto(identificacion)) {
+                estado.textContent = "¡Su voto ha sido registrado con éxito!";
+            } else {
+                estado.textContent = "Ya ha emitido su voto o su identificación no está registrada.";
+            }
+        }
+    </script>
+    <a href="/">Salir</a>
+</body>
+</html>
+
